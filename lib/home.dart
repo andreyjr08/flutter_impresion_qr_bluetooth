@@ -13,6 +13,27 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final List<Map<String, dynamic>> data = [
+    {
+      'title': 'Produk 1',
+      'price': 10000,
+      'qty': 2,
+      'total_price': 20000,
+    },
+    {
+      'title': 'Produk 2',
+      'price': 20000,
+      'qty': 2,
+      'total_price': 40000,
+    },
+    {
+      'title': 'Produk 3',
+      'price': 12000,
+      'qty': 1,
+      'total_price': 12000,
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     final qrFutureBuilder = FutureBuilder<ui.Image>(
@@ -62,7 +83,7 @@ class _MainScreenState extends State<MainScreen> {
                     ],
                   ),
                   onPressed: () => Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Print())))
+                      context, MaterialPageRoute(builder: (_) => Print(data))))
             ],
           ),
         ),

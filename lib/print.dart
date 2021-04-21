@@ -50,6 +50,13 @@ class _PrintState extends State<Print> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Print'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.refresh),
+            onPressed: () =>
+                   initPrinter()
+          ),
+        ],
       ),
       body: _devices.isEmpty
           ? Center(child: Text(_devicesMsg ?? ''))
